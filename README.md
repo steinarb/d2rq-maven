@@ -4,17 +4,17 @@ This has been done:
 * Cloned the d2rq repo as a bare repo with ```git clone --mirror https://github.com:d2rq/d2rq.git```
 * Stripped the cloned d2rq repository history of jar files
 
-    java -jar ../../Downloads/bfg-1.12.8.jar --delete-files "*.jar" d2rq.git
-    cd d2rq.git
-    git reflog expire --expire=now --all && git gc --prune=now --aggressive
+	java -jar ../../Downloads/bfg-1.12.8.jar --delete-files "*.jar" d2rq.git
+	cd d2rq.git
+	git reflog expire --expire=now --all && git gc --prune=now --aggressive
 
 * Cloned the stripped bare repo, checked out the most current branch, and removed the origin
 
-    cd ..
-    git clone d2rq.git d2rq-maven
-    cd d2rq-maven
-    git checkout d2rq2016
-    git remote remove origin
+	cd ..
+	git clone d2rq.git d2rq-maven
+	cd d2rq-maven
+	git checkout d2rq2016
+	git remote remove origin
 
 * Moved the contents of src/ to src/main/java (with history preserved)
 * Moved the contents of test/ to src/test/java (with history preserved)
