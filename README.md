@@ -1,3 +1,25 @@
+# Mavenized D2RQ
+
+This has been done:
+* Cloned the d2rq repo as a bare repo with ```git clone --mirror https://github.com:d2rq/d2rq.git```
+* Stripped the cloned d2rq repository history of jar files
+```java -jar ../../Downloads/bfg-1.12.8.jar --delete-files "*.jar" d2rq.git```
+```cd d2rq.git```
+```git reflog expire --expire=now --all && git gc --prune=now --aggressive```
+* Cloned the stripped bare repo, checked out the most current branch, and removed the origin
+```cd ..```
+```git clone d2rq.git d2rq-maven```
+```cd d2rq-maven```
+```git checkout d2rq2016```
+```git remote remove origin```
+* Moved the contents of src/ to src/main/java (with history preserved)
+* Moved the contents of test/ to src/test/java (with history preserved)
+* Removed the eclipse project files
+* Added a pom.xml file with all of the dependencies I could find, in the exact same version as the stripped jar files
+* Pushed the repository to a new github repository, http://github.com/steinarb/d2rq-maven
+
+Unfortunately I couldn't satisfy the joseki-3.4.4.jar dependency in maven. The URL http://joseki.org routes to Jena Fuseki, so I suspect the functionality exist there (but I haven't been able to find a class named RDFServer in any of the fuseki dependencies I have tried).
+
 # D2RQ – A Database to RDF Mapper
 
 D2RQ exposes the contents of relational databases as RDF. It consists of:
