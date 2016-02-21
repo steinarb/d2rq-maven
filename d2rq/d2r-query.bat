@@ -1,8 +1,8 @@
 @echo off
 set D2R_ROOT=%~p0
-set CP="%D2R_ROOT%build"
+set CP="%D2R_ROOT%target\classes"
 call :findjars "%D2R_ROOT%lib"
-call :findjars "%D2R_ROOT%target"
+call :findjars "%D2R_ROOT%target\lib"
 set LOGCONFIG=log4j.properties
 java -cp %CP% -Xmx1G "-Dlog4j.configuration=%LOGCONFIG%" d2rq.d2r_query %*
 exit /B
