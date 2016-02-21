@@ -2,7 +2,8 @@
 set D2RQ_ROOT=%~p0
 set CP="%D2RQ_ROOT%build"
 call :findjars "%D2RQ_ROOT%lib"
-set LOGCONFIG=file:%D2RQ_ROOT%etc/log4j.properties
+call :findjars "%D2R_ROOT%target"
+set LOGCONFIG=log4j.properties
 java -cp %CP% -Xmx1G "-Dlog4j.configuration=%LOGCONFIG%" d2rq.generate_mapping %*
 exit /B
 
