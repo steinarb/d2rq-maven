@@ -1,9 +1,9 @@
 #!/bin/bash
 D2RQ_ROOT="$( dirname "${BASH_SOURCE[0]}" )"
-CP="$D2RQ_ROOT/build"
+CP="$D2RQ_ROOT/target/classes"
 SEP=':'
 if [ $(uname -s | grep -ic 'cygwin\|mingw') -gt 0 ]; then SEP=';'; fi
-for jar in "$D2RQ_ROOT"/lib/*.jar "$D2RQ_ROOT"/lib/*/*.jar "$D2RQ_ROOT"/target/*.jar "$D2RQ_ROOT"/target/lib/*.jar
+for jar in "$D2RQ_ROOT"/lib/*.jar "$D2RQ_ROOT"/lib/*/*.jar "$D2RQ_ROOT"/target/lib/*.jar
 do
   if [ ! -e "$jar" ]; then continue; fi
   CP="$CP$SEP$jar"
