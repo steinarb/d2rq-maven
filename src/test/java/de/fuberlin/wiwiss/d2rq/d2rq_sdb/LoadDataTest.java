@@ -36,7 +36,7 @@ public abstract class LoadDataTest extends TestCase
     private static boolean loadHsqlData = true;
     private static boolean loadSDBData = true;
     // directories and data-files and config-files
-    protected static final String CURR_DIR = "test/de/fuberlin/wiwiss/d2rq/d2rq_sdb";
+    protected static final String CURR_DIR = "d2rq_sdb";
     private static final String DATA_DIR = "dataset";
     private static final String CONFIG_DIR = "config";
     private static final String FILENAME_TTL_DATA = "dataset.ttl.zip";
@@ -107,7 +107,7 @@ public abstract class LoadDataTest extends TestCase
     private void createHsqlDatabase() throws IOException, SQLException
     {
         Connection hsqlConnection;
-        File zipFile;
+        InputStream zipResourceStream;
         ZipEntry entry;
         ZipInputStream zipInputStream = null;
         String sqlData;
@@ -124,8 +124,8 @@ public abstract class LoadDataTest extends TestCase
         hsqlConnection = DriverManager.getConnection(HSQL_URL, HSQL_USER, HSQL_PASS);
 
         // load all data from dataset.ttl.zip
-        zipFile = new File(CURR_DIR + "/" + DATA_DIR + "/" + FILENAME_SQL_DATA);
-        zipInputStream = new ZipInputStream(new FileInputStream(zipFile));
+        zipResourceStream = getClass().getResourceAsStream("/" + CURR_DIR + "/" + DATA_DIR + "/" + FILENAME_SQL_DATA);
+        zipInputStream = new ZipInputStream(zipResourceStream);
 
         if (zipInputStream != null)
         {
