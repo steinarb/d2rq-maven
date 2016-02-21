@@ -12,7 +12,7 @@ import junit.framework.TestSuite;
  * @author Richard Cyganiak (richard@cyganiak.de)
  */
 public class D2RQTestSuite {
-    public static final String DIRECTORY = "test/de/fuberlin/wiwiss/d2rq/";
+    public static final String DIRECTORY = "src/test/resources/";
     public static final String DIRECTORY_URL = "file:" + DIRECTORY;
     public static final String ISWC_MAP = "file:doc/example/mapping-iswc.ttl";
 
