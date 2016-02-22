@@ -28,7 +28,7 @@ The joseki-3.4.4.jar dependency couldn't be satisfied on maven central.  To avoi
 
 	git clone https://github.com/steinarb/d2rq-maven-dependencies.git
     cd d2rq-maven-dependencies
-	mvn clean
+	mvn clean install
     cd ..
     git clone https://github.com/steinarb/d2rq-maven.git
     cd d2rq-maven
