@@ -24,7 +24,7 @@ This has been done:
 
 ## To build this project with maven
 
-The joseki-3.4.4.jar dependency couldn't be satisfied on maven central.  To avoid "polluting" this repository with a jar (all binaries checked into a git repository, are part of all future clones of the repository), I put the joseki into a separate maven dependency.  Therefore, the initial checkout and build of this project, is doing the following commands:
+The joseki-3.4.4.jar dependency couldn't be satisfied on maven central.  To avoid "polluting" this repository with a jar (all binaries checked into a git repository, are part of all future clones of the repository), I put the joseki into a separate git repository.  Therefore, the initial checkout and build of this project, is doing the following commands:
 
 	git clone https://github.com/steinarb/d2rq-maven-dependencies.git
     cd d2rq-maven-dependencies
